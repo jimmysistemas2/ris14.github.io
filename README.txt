@@ -1,25 +1,43 @@
-
-PORTAL WEB RIS ATE
+PORTAL RIS ATE RESPONSIVE - POWER BI
 
 Archivos:
+- index.html
+- style.css
+- script.js
+- config.js
+- data.js
+- README.txt
 
-1. index.html
-Pantalla principal institucional.
+Para insertar Power BI:
+1. Abra config.js.
+2. Pegue cada URL en la clave correspondiente.
+3. Ejemplo:
+   atenciones: "https://app.powerbi.com/reportEmbed?reportId=..."
 
-2. style.css
-Diseño visual premium y responsive.
+Secciones listas:
+- Indicadores de Gestión
+- Indicadores FED
+- Convenio de Gestión
+- Curso de Vida
+- Inmunizaciones
+- Salud Materno
+- Salud Bucal
+- Salud Mental
+- Enfermedades Metaxénicas
+- Urgencias y Emergencias
+- Atendidos y Atenciones
+- Ranking IPRESS
+- Ranking UPS
+- RRHH
+- Calidad de Datos
+- Reportes
 
-3. script.js
-Control de navegación y carga Power BI.
+Responsive:
+- Computadora
+- Laptop
+- Tablet
+- Celular
 
-4. config.js
-Aquí se pegan las URLs Power BI.
-
-PUBLICACIÓN:
-
-1. Abrir carpeta.
-2. Editar config.js.
-3. Pegar URLs Power BI.
-4. Publicar en GitHub Pages.
-
-Cada iframe ya está preparado para Power BI.
+Nota:
+Los centros RIS Ate están cargados en data.js.
+Puede actualizar atenciones y atendidos allí.
