@@ -1,14 +1,126 @@
-[
-  {"nombre":"C.S. San Fernando","tipo":"Centro de Salud","ambito":"RIS Ate"},
-  {"nombre":"C.S. Gustavo Lanatta","tipo":"Centro de Salud","ambito":"RIS Ate"},
-  {"nombre":"C.S. Salamanca","tipo":"Centro de Salud","ambito":"RIS Ate"},
-  {"nombre":"C.S. El Bosque","tipo":"Centro de Salud","ambito":"RIS Ate"},
-  {"nombre":"P.S. Ate","tipo":"Puesto de Salud","ambito":"RIS Ate"},
-  {"nombre":"CSMC Santísima Virgen de la Cruz","tipo":"Centro de Salud Mental Comunitaria","ambito":"RIS Ate"},
-  {"nombre":"C.S. Fortaleza","tipo":"Centro de Salud","ambito":"RIS Ate"},
-  {"nombre":"C.S. Micaela Bastidas","tipo":"Centro de Salud","ambito":"RIS Ate"},
-  {"nombre":"SMA Hogar Protegido Ate","tipo":"Salud Mental","ambito":"RIS Ate"},
-  {"nombre":"P.S. Túpac Amaru","tipo":"Puesto de Salud","ambito":"RIS Ate"},
-  {"nombre":"C.S. Alfa y Omega","tipo":"Centro de Salud","ambito":"RIS Ate"},
-  {"nombre":"CSMC Sayariy","tipo":"Centro de Salud Mental Comunitaria","ambito":"RIS Ate"}
-]
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- index.html: pantalla principal del portal web de la RIS Ate -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RIS Ate | Inteligencia Sanitaria</title>
+
+  <!-- Iconos modernos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Estilos del portal -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="background-glow"></div>
+
+  <div class="app">
+
+    <!-- Menú lateral institucional -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">RIS</div>
+        <div>
+          <h1>RIS Ate</h1>
+          <p>DIRIS Lima Este</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <button class="menu-item active" data-section="inicio"><i class="fa-solid fa-house"></i> Inicio</button>
+        <button class="menu-item" data-section="produccion"><i class="fa-solid fa-chart-column"></i> Producción</button>
+        <button class="menu-item" data-section="ipress"><i class="fa-solid fa-hospital"></i> IPRESS</button>
+        <button class="menu-item" data-section="ups"><i class="fa-solid fa-layer-group"></i> UPS / Servicios</button>
+        <button class="menu-item" data-section="rrhh"><i class="fa-solid fa-user-doctor"></i> RRHH</button>
+        <button class="menu-item" data-section="calidad"><i class="fa-solid fa-shield-halved"></i> Calidad de Datos</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <small>Portal ejecutivo</small>
+        <strong>Inteligencia Sanitaria</strong>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main">
+
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Sistema de Información Gerencial</p>
+          <h2>Dashboard Ejecutivo RIS Ate</h2>
+          <span>Monitoreo de atenciones, atendidos, IPRESS, UPS, RRHH y calidad de datos.</span>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="btn-secondary"><i class="fa-solid fa-calendar-days"></i> Corte 2026</button>
+          <button class="btn-primary"><i class="fa-solid fa-chart-line"></i> Power BI</button>
+        </div>
+      </header>
+
+      <!-- Pantalla inicial -->
+      <section id="inicio" class="section active">
+        <div class="hero">
+          <div class="hero-text">
+            <h3>Plataforma de Inteligencia Sanitaria para la RIS Ate</h3>
+            <p>
+              Portal web ejecutivo diseñado para integrar dashboards de Power BI,
+              análisis de producción asistencial, seguimiento de IPRESS, monitoreo de UPS,
+              gestión de recursos humanos y control de calidad de datos.
+            </p>
+
+            <div class="hero-buttons">
+              <button onclick="goToSection('produccion')" class="btn-primary">Ver producción</button>
+              <button onclick="goToSection('calidad')" class="btn-secondary">Ver calidad de datos</button>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <i class="fa-solid fa-hospital-user"></i>
+            <h4>RIS Ate</h4>
+            <p>Red Integrada de Salud orientada a la toma de decisiones basada en datos.</p>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <article class="kpi-card"><i class="fa-solid fa-kit-medical"></i><small>Producción</small><strong>Atenciones</strong><p>Monitoreo de la carga asistencial.</p></article>
+          <article class="kpi-card"><i class="fa-solid fa-users"></i><small>Cobertura</small><strong>Atendidos</strong><p>Personas únicas atendidas.</p></article>
+          <article class="kpi-card"><i class="fa-solid fa-user-doctor"></i><small>Gestión</small><strong>RRHH</strong><p>Productividad y condición del personal.</p></article>
+          <article class="kpi-card"><i class="fa-solid fa-shield-halved"></i><small>Control</small><strong>Calidad</strong><p>Validación de datos críticos.</p></article>
+        </div>
+      </section>
+
+      <!-- Pestañas para Power BI -->
+      <section id="produccion" class="section">
+        <div class="section-header"><h3>Producción asistencial</h3><p>Power BI de atenciones, atendidos, tendencia y concentración.</p></div>
+        <div class="powerbi-container"><iframe id="powerbi-produccion" title="Power BI Producción RIS Ate"></iframe></div>
+      </section>
+
+      <section id="ipress" class="section">
+        <div class="section-header"><h3>Análisis por IPRESS</h3><p>Ranking, carga asistencial y comparación entre establecimientos.</p></div>
+        <div class="powerbi-container"><iframe id="powerbi-ipress" title="Power BI IPRESS RIS Ate"></iframe></div>
+      </section>
+
+      <section id="ups" class="section">
+        <div class="section-header"><h3>Análisis por UPS / Servicios</h3><p>Producción por servicio, demanda y líneas de atención.</p></div>
+        <div class="powerbi-container"><iframe id="powerbi-ups" title="Power BI UPS RIS Ate"></iframe></div>
+      </section>
+
+      <section id="rrhh" class="section">
+        <div class="section-header"><h3>Recursos Humanos</h3><p>Productividad por profesional, condición laboral y carga asistencial.</p></div>
+        <div class="powerbi-container"><iframe id="powerbi-rrhh" title="Power BI RRHH RIS Ate"></iframe></div>
+      </section>
+
+      <section id="calidad" class="section">
+        <div class="section-header"><h3>Calidad de datos</h3><p>Registros observados, documentos inconsistentes, edad, UPS y RRHH.</p></div>
+        <div class="powerbi-container"><iframe id="powerbi-calidad" title="Power BI Calidad de Datos RIS Ate"></iframe></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
