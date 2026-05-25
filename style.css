@@ -264,3 +264,219 @@ body{
   }
 
 }
+
+
+/* ===== VALIDACIÓN RESPONSIVE Y ESTRUCTURA ===== */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+iframe{
+  max-width:100%;
+}
+
+.hero,
+.topbar,
+.ipress-grid,
+.kpis{
+  width:100%;
+}
+
+.hero-left,
+.hero-map,
+.ipress-card,
+.powerbi-box{
+  min-width:0;
+}
+
+.powerbi-box{
+  overflow:hidden;
+}
+
+.powerbi-box iframe{
+  min-height:720px;
+}
+
+.territory{
+  width:100%;
+  min-height:420px;
+}
+
+.pin{
+  z-index:10;
+}
+
+@media(max-width:1400px){
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-map{
+    order:-1;
+  }
+
+  .territory{
+    height:380px;
+  }
+
+}
+
+@media(max-width:1024px){
+
+  .topbar{
+    padding:18px;
+  }
+
+  .hero{
+    padding:18px;
+  }
+
+  .hero-left,
+  .hero-map{
+    padding:20px;
+  }
+
+  .kpis{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .ipress-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .powerbi-box iframe{
+    height:760px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  body{
+    font-size:14px;
+  }
+
+  .topbar{
+    border-radius:0 0 18px 18px;
+  }
+
+  .brand{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .brand img{
+    width:90px;
+  }
+
+  .date-card{
+    width:100%;
+    justify-content:center;
+  }
+
+  .hero{
+    padding:14px;
+    gap:16px;
+  }
+
+  .hero-left h2{
+    font-size:30px;
+    line-height:1.1;
+  }
+
+  .hero-left h3{
+    font-size:22px;
+  }
+
+  .hero-left p{
+    font-size:14px;
+  }
+
+  .kpis{
+    grid-template-columns:1fr;
+  }
+
+  .kpi{
+    width:100%;
+  }
+
+  .territory{
+    min-height:320px;
+  }
+
+  .pin{
+    font-size:11px;
+    padding:6px 10px;
+  }
+
+  .section-title{
+    text-align:center;
+  }
+
+  .ipress-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ipress-card{
+    width:100%;
+  }
+
+  .powerbi-box{
+    margin:12px;
+    padding:12px;
+  }
+
+  .powerbi-box iframe{
+    height:650px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .topbar{
+    padding:14px;
+  }
+
+  .brand h1{
+    font-size:24px;
+  }
+
+  .brand p{
+    font-size:12px;
+  }
+
+  .hero-left h2{
+    font-size:24px;
+  }
+
+  .hero-left h3{
+    font-size:18px;
+  }
+
+  .territory{
+    min-height:260px;
+  }
+
+  .pin{
+    font-size:9px;
+    padding:4px 8px;
+  }
+
+  .powerbi-box iframe{
+    height:560px;
+  }
+
+}
