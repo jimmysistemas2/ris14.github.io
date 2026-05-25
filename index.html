@@ -1,180 +1,120 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIS Ate Dashboard Ejecutivo</title>
 
-  <title>RIS Ate | Sistema de Información y Estadística en Salud</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">
-    <i class="fa-solid fa-bars"></i>
-  </button>
 
-  <div class="overlay" id="overlay"></div>
-
-  <div class="app">
-
-    <aside class="sidebar" id="sidebar">
-      <div class="logo-zone">
-        <div class="minsa-logo">
-          <strong>MINSA</strong>
-          <span>DIRIS LIMA ESTE</span>
-        </div>
-
-        <div class="ris-logo">
-          <div class="ris-symbol">
-            <i class="fa-solid fa-person-rays"></i>
-          </div>
-          <div>
-            <small>RED INTEGRADA<br>DE SALUD</small>
-            <strong>ATE</strong>
-          </div>
-        </div>
-      </div>
-
-      <nav class="side-nav" id="sideNav">
-        <div class="nav-group">
-          <h4>INICIO</h4>
-          <button class="nav-item active" data-section="inicio">
-            <i class="fa-solid fa-house"></i>
-            <span>Página de inicio</span>
-          </button>
-        </div>
-
-        <div class="nav-group">
-          <h4>INDICADORES</h4>
-          <button class="nav-item" data-section="gestion"><i class="fa-solid fa-chart-column"></i><span>Indicadores de Gestión</span></button>
-          <button class="nav-item" data-section="fed"><i class="fa-solid fa-chart-line"></i><span>Indicadores FED</span></button>
-          <button class="nav-item" data-section="convenio"><i class="fa-solid fa-handshake"></i><span>Convenio de Gestión</span></button>
-        </div>
-
-        <div class="nav-group">
-          <h4>ESTRATEGIAS SANITARIAS</h4>
-          <button class="nav-item" data-section="curso"><i class="fa-solid fa-children"></i><span>Curso de Vida</span></button>
-          <button class="nav-item" data-section="inmunizaciones"><i class="fa-solid fa-syringe"></i><span>Inmunizaciones</span></button>
-          <button class="nav-item" data-section="materno"><i class="fa-solid fa-person-pregnant"></i><span>Salud Materno</span></button>
-          <button class="nav-item" data-section="bucal"><i class="fa-solid fa-tooth"></i><span>Salud Bucal</span></button>
-          <button class="nav-item" data-section="mental"><i class="fa-solid fa-brain"></i><span>Salud Mental</span></button>
-          <button class="nav-item" data-section="metaxenicas"><i class="fa-solid fa-mosquito"></i><span>Enfermedades Metaxénicas</span></button>
-          <button class="nav-item" data-section="urgencias"><i class="fa-solid fa-truck-medical"></i><span>Urgencias y Emergencias</span></button>
-        </div>
-
-        <div class="nav-group">
-          <h4>ATENCIONES EN SALUD</h4>
-          <button class="nav-item" data-section="atenciones"><i class="fa-solid fa-users"></i><span>Atendidos y Atenciones</span></button>
-          <button class="nav-item" data-section="ipress"><i class="fa-solid fa-trophy"></i><span>Ranking IPRESS</span></button>
-          <button class="nav-item" data-section="ups"><i class="fa-solid fa-award"></i><span>Ranking UPS</span></button>
-        </div>
-
-        <div class="nav-group">
-          <h4>GESTIÓN</h4>
-          <button class="nav-item" data-section="rrhh"><i class="fa-solid fa-user-doctor"></i><span>RRHH</span></button>
-          <button class="nav-item" data-section="calidad"><i class="fa-solid fa-shield-halved"></i><span>Calidad de Datos</span></button>
-          <button class="nav-item" data-section="reportes"><i class="fa-solid fa-file-lines"></i><span>Reportes</span></button>
-        </div>
-      </nav>
-    </aside>
-
-    <main class="main">
-
-      <header class="topbar">
-        <div class="top-title">
-          <h1>RIS ATE</h1>
-          <p>Sistema de Información y Estadística en Salud</p>
-        </div>
-
-        <div class="date-card">
-          <i class="fa-solid fa-calendar-days"></i>
-          <div>
-            <strong>31 de Mayo, 2026</strong>
-            <span>10:30 AM</span>
-          </div>
-        </div>
-      </header>
-
-      <section id="inicio" class="section active">
-        <div class="hero-panel">
-          <div class="hero-copy">
-            <h2>Bienvenido a RIS ATE</h2>
-            <h3>Red Integrada de Salud Ate - DIRIS Lima Este</h3>
-            <p>
-              Plataforma oficial para el monitoreo, análisis y evaluación de indicadores de salud,
-              producción de servicios y estrategias sanitarias en la jurisdicción de la Red Integrada de Salud Ate.
-            </p>
-            <p>
-              Información confiable y oportuna para la toma de decisiones y la mejora continua de los servicios de salud.
-            </p>
-
-            <div class="divider"></div>
-
-            <div class="quick-kpis">
-              <div class="quick-card blue"><i class="fa-solid fa-hospital"></i><strong id="totalIpress">0</strong><span>IPRESS RIS Ate</span></div>
-              <div class="quick-card green"><i class="fa-solid fa-layer-group"></i><strong>UPS</strong><span>Servicios</span></div>
-              <div class="quick-card violet"><i class="fa-solid fa-list-check"></i><strong>16</strong><span>Módulos</span></div>
-              <div class="quick-card amber"><i class="fa-solid fa-route"></i><strong>RIS Ate</strong><span>Territorio</span></div>
-            </div>
-          </div>
-
-          <div class="map-area">
-            <div class="ate-map ate-only-map">
-              <div class="ate-district-shape">
-                <span class="zone z1"></span>
-                <span class="zone z2"></span>
-                <span class="zone z3"></span>
-                <span class="zone z4"></span>
-                <span class="zone z5"></span>
-              </div>
-
-              <span class="center-pin c1"><i class="fa-solid fa-hospital"></i> Fortaleza</span>
-              <span class="center-pin c2"><i class="fa-solid fa-hospital"></i> San Fernando</span>
-              <span class="center-pin c3"><i class="fa-solid fa-hospital"></i> Micaela Bastidas</span>
-              <span class="center-pin c4"><i class="fa-solid fa-hospital"></i> Alfa y Omega</span>
-              <span class="center-pin c5"><i class="fa-solid fa-hospital"></i> El Bosque</span>
-              <span class="center-pin c6"><i class="fa-solid fa-house-medical"></i> P.S. Ate</span>
-
-              <div class="map-title">
-                <strong>RIS ATE</strong>
-                <small>Ámbito territorial de establecimientos</small>
-              </div>
-            </div>
-            <p class="quote">“Datos que transforman información en decisiones que salvan vidas.”</p>
-          </div>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card" onclick="goToSection('gestion')"><div class="icon-circle blue"><i class="fa-solid fa-chart-column"></i></div><h3>INDICADORES</h3><p>Seguimiento de metas, indicadores de gestión y FED.</p><button>Ver más →</button></article>
-          <article class="feature-card" onclick="goToSection('atenciones')"><div class="icon-circle green"><i class="fa-solid fa-hospital-user"></i></div><h3>ATENCIONES</h3><p>Análisis de atendidos, atenciones y producción.</p><button>Ver más →</button></article>
-          <article class="feature-card" onclick="goToSection('ipress')"><div class="icon-circle amber"><i class="fa-solid fa-trophy"></i></div><h3>RANKING IPRESS</h3><p>Comparativo de desempeño entre establecimientos.</p><button>Ver más →</button></article>
-          <article class="feature-card" onclick="goToSection('ups')"><div class="icon-circle violet"><i class="fa-solid fa-award"></i></div><h3>RANKING UPS</h3><p>Evaluación y ranking de las Unidades Productoras de Servicios.</p><button>Ver más →</button></article>
-          <article class="feature-card" onclick="goToSection('reportes')"><div class="icon-circle cyan"><i class="fa-solid fa-clipboard-list"></i></div><h3>REPORTES</h3><p>Informes, tableros y reportes ejecutivos.</p><button>Ver más →</button></article>
-        </div>
-
-        <div class="ipress-panel">
-          <div>
-            <h3>Centros de la RIS Ate</h3>
-            <p>Atenciones y atendidos registrados para seguimiento territorial.</p>
-          </div>
-          <div id="ipressList" class="ipress-list"></div>
-        </div>
-
-        <footer class="footer">
-          <div><i class="fa-solid fa-circle-info"></i></div>
-          <div><strong>RIS ATE - DIRIS Lima Este</strong><p>Sistema desarrollado para fortalecer la gestión de la información en salud.</p></div>
-          <span>© 2026 DIRIS Lima Este · Versión 1.0.0</span>
-        </footer>
-      </section>
-
-      <div id="powerSections"></div>
-    </main>
+<div class="topbar">
+  <div class="brand">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Minsa_Peru.svg/320px-Minsa_Peru.svg.png">
+    <div>
+      <h1>RIS ATE</h1>
+      <p>Sistema de Información y Estadística en Salud</p>
+    </div>
   </div>
 
-  <script src="data.js"></script>
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+  <div class="date-card">
+    <i class="fa-solid fa-calendar-days"></i>
+    <div>
+      <strong>Dashboard Ejecutivo</strong>
+      <span>DIRIS Lima Este</span>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+
+  <div class="hero-left">
+
+    <h2>Bienvenido a RIS Ate</h2>
+
+    <h3>Red Integrada de Salud Ate</h3>
+
+    <p>
+      Plataforma ejecutiva para monitoreo territorial, producción,
+      población y estrategias sanitarias de la RIS Ate.
+    </p>
+
+    <div class="kpis">
+
+      <div class="kpi blue">
+        <i class="fa-solid fa-hospital"></i>
+        <strong id="ipress"></strong>
+        <span>IPRESS</span>
+      </div>
+
+      <div class="kpi green">
+        <i class="fa-solid fa-users"></i>
+        <strong id="population"></strong>
+        <span>Población</span>
+      </div>
+
+      <div class="kpi orange">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <strong>RIS Ate</strong>
+        <span>Territorio</span>
+      </div>
+
+      <div class="kpi purple">
+        <i class="fa-solid fa-chart-line"></i>
+        <strong>Power BI</strong>
+        <span>Analytics</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="hero-map">
+
+    <div class="map-card">
+
+      <div class="map-title">
+        <h3>Ámbito Territorial RIS Ate</h3>
+      </div>
+
+      <div class="territory">
+
+        <div class="shape s1"></div>
+        <div class="shape s2"></div>
+        <div class="shape s3"></div>
+
+        <span class="pin p1">Fortaleza</span>
+        <span class="pin p2">San Fernando</span>
+        <span class="pin p3">Micaela Bastidas</span>
+        <span class="pin p4">Alfa y Omega</span>
+        <span class="pin p5">P.S. Ate</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="section-title">
+  <h2>Centros RIS Ate</h2>
+  <p>Establecimientos oficiales validados</p>
+</div>
+
+<div class="ipress-grid" id="ipress-grid"></div>
+
+<div class="powerbi-box">
+  <h2>Atendidos y Atenciones</h2>
+  <iframe src="https://jimmysistemas2.github.io/atc.github.io/#resumen"></iframe>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
