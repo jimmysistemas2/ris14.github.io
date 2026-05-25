@@ -1,20 +1,25 @@
-PROYECTO WEB RIS ATE - PORTAL POWER BI
+
+PORTAL WEB RIS ATE
 
 Archivos:
-1. index.html  - pantalla principal.
-2. style.css   - diseño visual.
-3. script.js   - navegación e inserción de Power BI.
-4. config.js   - URLs de Power BI.
-5. README.txt  - guía básica.
 
-Uso:
-1. Abrir index.html.
-2. Pegar URLs de Power BI en config.js.
-3. Publicar en GitHub Pages o servidor web.
+1. index.html
+Pantalla principal institucional.
 
-Pestañas preparadas:
-- Producción
-- IPRESS
-- UPS / Servicios
-- RRHH
-- Calidad de Datos
+2. style.css
+Diseño visual premium y responsive.
+
+3. script.js
+Control de navegación y carga Power BI.
+
+4. config.js
+Aquí se pegan las URLs Power BI.
+
+PUBLICACIÓN:
+
+1. Abrir carpeta.
+2. Editar config.js.
+3. Pegar URLs Power BI.
+4. Publicar en GitHub Pages.
+
+Cada iframe ya está preparado para Power BI.

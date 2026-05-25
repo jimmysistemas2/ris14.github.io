@@ -1,62 +1,95 @@
-/*
-script.js
-Función:
-- Controla la navegación por pestañas.
-- Inserta automáticamente las URLs de Power BI definidas en config.js.
-*/
 
-document.querySelectorAll(".menu-item").forEach(button => {
-  button.addEventListener("click", () => {
-    const sectionId = button.dataset.section;
-    goToSection(sectionId);
+document.querySelectorAll(".menu-item").forEach(btn=>{
+
+  btn.addEventListener("click",()=>{
+
+    const section = btn.dataset.section;
+
+    goToSection(section);
+
   });
+
 });
 
-function goToSection(sectionId) {
-  document.querySelectorAll(".section").forEach(section => {
+function goToSection(sectionId){
+
+  document.querySelectorAll(".section").forEach(section=>{
+
     section.classList.remove("active");
+
   });
 
-  document.querySelectorAll(".menu-item").forEach(item => {
-    item.classList.remove("active");
+  document.querySelectorAll(".menu-item").forEach(btn=>{
+
+    btn.classList.remove("active");
+
   });
 
   const target = document.getElementById(sectionId);
-  const menu = document.querySelector(`[data-section="${sectionId}"]`);
 
-  if (target) target.classList.add("active");
-  if (menu) menu.classList.add("active");
+  if(target){
+
+    target.classList.add("active");
+
+  }
+
+  const activeBtn = document.querySelector(`[data-section="${sectionId}"]`);
+
+  if(activeBtn){
+
+    activeBtn.classList.add("active");
+
+  }
+
 }
 
-function loadPowerBiReports() {
-  const mapping = {
-    produccion: "powerbi-produccion",
-    ipress: "powerbi-ipress",
-    ups: "powerbi-ups",
-    rrhh: "powerbi-rrhh",
-    calidad: "powerbi-calidad"
-  };
+const mapping = {
+  gestion:"pbi-gestion",
+  fed:"pbi-fed",
+  convenio:"pbi-convenio",
+  curso:"pbi-curso",
+  inmunizaciones:"pbi-inmunizaciones",
+  mental:"pbi-mental",
+  atenciones:"pbi-atenciones",
+  ipress:"pbi-ipress",
+  ups:"pbi-ups",
+  rrhh:"pbi-rrhh",
+  calidad:"pbi-calidad"
+};
 
-  Object.keys(mapping).forEach(key => {
-    const iframe = document.getElementById(mapping[key]);
-    if (!iframe) return;
+Object.keys(mapping).forEach(key=>{
 
-    const url = POWERBI_URLS[key];
+  const iframe = document.getElementById(mapping[key]);
 
-    if (url && url.trim() !== "") {
-      iframe.src = url;
-    } else {
-      iframe.srcdoc = `
-        <html>
-          <body style="margin:0;height:100vh;display:grid;place-items:center;background:#06111d;color:white;font-family:Arial;text-align:center;">
-            <div>
-              <h2>Reporte Power BI pendiente</h2>
-              <p>Coloque la URL del reporte en el archivo config.js</p>
-            </div>
-          </body>
-        </html>`;
-    }
-  });
-}
+  if(!iframe) return;
 
-loadPowerBiReports();
+  const url = POWERBI_URLS[key];
+
+  if(url && url.trim() !== ""){
+
+    iframe.src = url;
+
+  }else{
+
+    iframe.srcdoc = `
+    <html>
+    <body style="
+    margin:0;
+    display:grid;
+    place-items:center;
+    height:100vh;
+    background:#f6fbff;
+    font-family:Arial;
+    color:#1a4c70;
+    text-align:center;">
+    <div>
+      <h2>Power BI pendiente</h2>
+      <p>Pegue la URL en config.js</p>
+    </div>
+    </body>
+    </html>
+    `;
+
+  }
+
+});

@@ -1,126 +1,424 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- index.html: pantalla principal del portal web de la RIS Ate -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIS Ate - Inteligencia Sanitaria</title>
 
-  <title>RIS Ate | Inteligencia Sanitaria</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 
-  <!-- Iconos modernos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- Estilos del portal -->
-  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="background-glow"></div>
 
-  <div class="app">
+<div class="app">
 
-    <!-- Menú lateral institucional -->
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-logo">RIS</div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-top">
+
+      <div class="logo-card">
+        <div class="logo-minsa">MINSA</div>
+        <div class="logo-diris">DIRIS Lima Este</div>
+      </div>
+
+      <div class="logo-ris">
+        <div class="ris-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+
         <div>
-          <h1>RIS Ate</h1>
-          <p>DIRIS Lima Este</p>
+          <h2>RIS ATE</h2>
+          <p>Red Integrada de Salud</p>
         </div>
       </div>
 
-      <nav class="menu">
-        <button class="menu-item active" data-section="inicio"><i class="fa-solid fa-house"></i> Inicio</button>
-        <button class="menu-item" data-section="produccion"><i class="fa-solid fa-chart-column"></i> Producción</button>
-        <button class="menu-item" data-section="ipress"><i class="fa-solid fa-hospital"></i> IPRESS</button>
-        <button class="menu-item" data-section="ups"><i class="fa-solid fa-layer-group"></i> UPS / Servicios</button>
-        <button class="menu-item" data-section="rrhh"><i class="fa-solid fa-user-doctor"></i> RRHH</button>
-        <button class="menu-item" data-section="calidad"><i class="fa-solid fa-shield-halved"></i> Calidad de Datos</button>
-      </nav>
+    </div>
 
-      <div class="sidebar-footer">
-        <small>Portal ejecutivo</small>
-        <strong>Inteligencia Sanitaria</strong>
+    <!-- MENU -->
+    <div class="menu-group">
+
+      <h4>INICIO</h4>
+
+      <button class="menu-item active" data-section="inicio">
+        <i class="fa-solid fa-house"></i>
+        Página de inicio
+      </button>
+
+    </div>
+
+    <div class="menu-group">
+
+      <h4>INDICADORES</h4>
+
+      <button class="menu-item" data-section="gestion">
+        <i class="fa-solid fa-chart-column"></i>
+        Indicadores de Gestión
+      </button>
+
+      <button class="menu-item" data-section="fed">
+        <i class="fa-solid fa-chart-line"></i>
+        Indicadores FED
+      </button>
+
+      <button class="menu-item" data-section="convenio">
+        <i class="fa-solid fa-handshake"></i>
+        Convenio de Gestión
+      </button>
+
+    </div>
+
+    <div class="menu-group">
+
+      <h4>ESTRATEGIAS SANITARIAS</h4>
+
+      <button class="menu-item" data-section="curso">
+        <i class="fa-solid fa-children"></i>
+        Curso de Vida
+      </button>
+
+      <button class="menu-item" data-section="inmunizaciones">
+        <i class="fa-solid fa-syringe"></i>
+        Inmunizaciones
+      </button>
+
+      <button class="menu-item" data-section="mental">
+        <i class="fa-solid fa-brain"></i>
+        Salud Mental
+      </button>
+
+    </div>
+
+    <div class="menu-group">
+
+      <h4>ATENCIONES EN SALUD</h4>
+
+      <button class="menu-item" data-section="atenciones">
+        <i class="fa-solid fa-users"></i>
+        Atendidos y Atenciones
+      </button>
+
+      <button class="menu-item" data-section="ipress">
+        <i class="fa-solid fa-trophy"></i>
+        Ranking IPRESS
+      </button>
+
+      <button class="menu-item" data-section="ups">
+        <i class="fa-solid fa-award"></i>
+        Ranking UPS
+      </button>
+
+      <button class="menu-item" data-section="rrhh">
+        <i class="fa-solid fa-user-doctor"></i>
+        RRHH
+      </button>
+
+      <button class="menu-item" data-section="calidad">
+        <i class="fa-solid fa-shield-halved"></i>
+        Calidad de Datos
+      </button>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+      <div class="topbar-title">
+
+        <h1>RIS ATE</h1>
+        <p>Sistema de Información y Estadística en Salud</p>
+
       </div>
-    </aside>
 
-    <!-- Contenido principal -->
-    <main class="main">
+      <div class="date-box">
 
-      <header class="topbar">
+        <i class="fa-solid fa-calendar-days"></i>
+
         <div>
-          <p class="eyebrow">Sistema de Información Gerencial</p>
-          <h2>Dashboard Ejecutivo RIS Ate</h2>
-          <span>Monitoreo de atenciones, atendidos, IPRESS, UPS, RRHH y calidad de datos.</span>
+          <strong>31 de Mayo, 2026</strong>
+          <span>10:30 AM</span>
         </div>
 
-        <div class="topbar-actions">
-          <button class="btn-secondary"><i class="fa-solid fa-calendar-days"></i> Corte 2026</button>
-          <button class="btn-primary"><i class="fa-solid fa-chart-line"></i> Power BI</button>
-        </div>
-      </header>
+      </div>
 
-      <!-- Pantalla inicial -->
-      <section id="inicio" class="section active">
-        <div class="hero">
-          <div class="hero-text">
-            <h3>Plataforma de Inteligencia Sanitaria para la RIS Ate</h3>
-            <p>
-              Portal web ejecutivo diseñado para integrar dashboards de Power BI,
-              análisis de producción asistencial, seguimiento de IPRESS, monitoreo de UPS,
-              gestión de recursos humanos y control de calidad de datos.
-            </p>
+    </header>
 
-            <div class="hero-buttons">
-              <button onclick="goToSection('produccion')" class="btn-primary">Ver producción</button>
-              <button onclick="goToSection('calidad')" class="btn-secondary">Ver calidad de datos</button>
+    <!-- INICIO -->
+    <section id="inicio" class="section active">
+
+      <div class="hero-panel">
+
+        <div class="hero-content">
+
+          <h2>Bienvenido a RIS ATE</h2>
+
+          <h3>Red Integrada de Salud Ate - DIRIS Lima Este</h3>
+
+          <p>
+            Plataforma oficial para el monitoreo, análisis y evaluación
+            de indicadores de salud, producción de servicios y estrategias sanitarias.
+          </p>
+
+          <p>
+            Información confiable y oportuna para la toma de decisiones
+            y mejora continua de los servicios de salud.
+          </p>
+
+          <div class="hero-line"></div>
+
+          <!-- KPIs -->
+          <div class="hero-kpis">
+
+            <div class="mini-kpi blue">
+              <i class="fa-solid fa-hospital"></i>
+              <strong>85</strong>
+              <span>IPRESS</span>
             </div>
+
+            <div class="mini-kpi green">
+              <i class="fa-solid fa-layer-group"></i>
+              <strong>512</strong>
+              <span>UPS</span>
+            </div>
+
+            <div class="mini-kpi yellow">
+              <i class="fa-solid fa-users"></i>
+              <strong>1.2M+</strong>
+              <span>Población</span>
+            </div>
+
+            <div class="mini-kpi purple">
+              <i class="fa-solid fa-list-check"></i>
+              <strong>24</strong>
+              <span>Indicadores</span>
+            </div>
+
           </div>
 
-          <div class="hero-card">
+        </div>
+
+        <!-- MAP -->
+        <div class="map-panel">
+
+          <div class="map-placeholder">
+
+            <div class="ris-circle one">RIS 1</div>
+            <div class="ris-circle two">RIS 2</div>
+            <div class="ris-circle three">RIS 3</div>
+            <div class="ris-circle four">RIS 4</div>
+            <div class="ris-circle five">RIS 5</div>
+            <div class="ris-circle six">RIS 6</div>
+            <div class="ris-circle seven">RIS 7</div>
+
+          </div>
+
+          <div class="quote">
+            “Datos que transforman información en decisiones.”
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARDS -->
+      <div class="cards-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon blue">
+            <i class="fa-solid fa-chart-column"></i>
+          </div>
+
+          <h3>INDICADORES</h3>
+
+          <p>
+            Seguimiento de metas e indicadores en tiempo real.
+          </p>
+
+          <button onclick="goToSection('gestion')">
+            Ver más
+          </button>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon green">
             <i class="fa-solid fa-hospital-user"></i>
-            <h4>RIS Ate</h4>
-            <p>Red Integrada de Salud orientada a la toma de decisiones basada en datos.</p>
           </div>
+
+          <h3>ATENCIONES</h3>
+
+          <p>
+            Análisis de atendidos, atenciones y producción.
+          </p>
+
+          <button onclick="goToSection('atenciones')">
+            Ver más
+          </button>
         </div>
 
-        <div class="kpi-grid">
-          <article class="kpi-card"><i class="fa-solid fa-kit-medical"></i><small>Producción</small><strong>Atenciones</strong><p>Monitoreo de la carga asistencial.</p></article>
-          <article class="kpi-card"><i class="fa-solid fa-users"></i><small>Cobertura</small><strong>Atendidos</strong><p>Personas únicas atendidas.</p></article>
-          <article class="kpi-card"><i class="fa-solid fa-user-doctor"></i><small>Gestión</small><strong>RRHH</strong><p>Productividad y condición del personal.</p></article>
-          <article class="kpi-card"><i class="fa-solid fa-shield-halved"></i><small>Control</small><strong>Calidad</strong><p>Validación de datos críticos.</p></article>
+        <div class="feature-card">
+          <div class="feature-icon yellow">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+
+          <h3>RANKING IPRESS</h3>
+
+          <p>
+            Comparativo de desempeño entre establecimientos.
+          </p>
+
+          <button onclick="goToSection('ipress')">
+            Ver más
+          </button>
         </div>
-      </section>
 
-      <!-- Pestañas para Power BI -->
-      <section id="produccion" class="section">
-        <div class="section-header"><h3>Producción asistencial</h3><p>Power BI de atenciones, atendidos, tendencia y concentración.</p></div>
-        <div class="powerbi-container"><iframe id="powerbi-produccion" title="Power BI Producción RIS Ate"></iframe></div>
-      </section>
+        <div class="feature-card">
+          <div class="feature-icon purple">
+            <i class="fa-solid fa-award"></i>
+          </div>
 
-      <section id="ipress" class="section">
-        <div class="section-header"><h3>Análisis por IPRESS</h3><p>Ranking, carga asistencial y comparación entre establecimientos.</p></div>
-        <div class="powerbi-container"><iframe id="powerbi-ipress" title="Power BI IPRESS RIS Ate"></iframe></div>
-      </section>
+          <h3>RANKING UPS</h3>
 
-      <section id="ups" class="section">
-        <div class="section-header"><h3>Análisis por UPS / Servicios</h3><p>Producción por servicio, demanda y líneas de atención.</p></div>
-        <div class="powerbi-container"><iframe id="powerbi-ups" title="Power BI UPS RIS Ate"></iframe></div>
-      </section>
+          <p>
+            Evaluación de Unidades Productoras de Servicios.
+          </p>
 
-      <section id="rrhh" class="section">
-        <div class="section-header"><h3>Recursos Humanos</h3><p>Productividad por profesional, condición laboral y carga asistencial.</p></div>
-        <div class="powerbi-container"><iframe id="powerbi-rrhh" title="Power BI RRHH RIS Ate"></iframe></div>
-      </section>
+          <button onclick="goToSection('ups')">
+            Ver más
+          </button>
+        </div>
 
-      <section id="calidad" class="section">
-        <div class="section-header"><h3>Calidad de datos</h3><p>Registros observados, documentos inconsistentes, edad, UPS y RRHH.</p></div>
-        <div class="powerbi-container"><iframe id="powerbi-calidad" title="Power BI Calidad de Datos RIS Ate"></iframe></div>
-      </section>
-    </main>
-  </div>
+      </div>
 
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+      <!-- FOOTER -->
+      <div class="footer-card">
+
+        <div>
+          <strong>RIS ATE - DIRIS Lima Este</strong>
+          <p>Sistema desarrollado para fortalecer la gestión de información en salud.</p>
+        </div>
+
+        <div>
+          © 2026 DIRIS Lima Este
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- POWER BI SECTIONS -->
+    <section id="gestion" class="section">
+      <div class="powerbi-header">
+        <h2>Indicadores de Gestión</h2>
+        <p>Dashboard Power BI institucional.</p>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-gestion"></iframe>
+      </div>
+    </section>
+
+    <section id="fed" class="section">
+      <div class="powerbi-header">
+        <h2>Indicadores FED</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-fed"></iframe>
+      </div>
+    </section>
+
+    <section id="convenio" class="section">
+      <div class="powerbi-header">
+        <h2>Convenio de Gestión</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-convenio"></iframe>
+      </div>
+    </section>
+
+    <section id="curso" class="section">
+      <div class="powerbi-header">
+        <h2>Curso de Vida</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-curso"></iframe>
+      </div>
+    </section>
+
+    <section id="inmunizaciones" class="section">
+      <div class="powerbi-header">
+        <h2>Inmunizaciones</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-inmunizaciones"></iframe>
+      </div>
+    </section>
+
+    <section id="mental" class="section">
+      <div class="powerbi-header">
+        <h2>Salud Mental</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-mental"></iframe>
+      </div>
+    </section>
+
+    <section id="atenciones" class="section">
+      <div class="powerbi-header">
+        <h2>Atendidos y Atenciones</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-atenciones"></iframe>
+      </div>
+    </section>
+
+    <section id="ipress" class="section">
+      <div class="powerbi-header">
+        <h2>Ranking IPRESS</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-ipress"></iframe>
+      </div>
+    </section>
+
+    <section id="ups" class="section">
+      <div class="powerbi-header">
+        <h2>Ranking UPS</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-ups"></iframe>
+      </div>
+    </section>
+
+    <section id="rrhh" class="section">
+      <div class="powerbi-header">
+        <h2>RRHH</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-rrhh"></iframe>
+      </div>
+    </section>
+
+    <section id="calidad" class="section">
+      <div class="powerbi-header">
+        <h2>Calidad de Datos</h2>
+      </div>
+      <div class="powerbi-container">
+        <iframe id="pbi-calidad"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
