@@ -57,19 +57,13 @@ function loadPowerBi(){
 }
 
 function renderIpress(){
-  const totalAt = IPRESS_DATA.reduce((a,b)=>a+(b.atenciones||0),0);
-  const totalAd = IPRESS_DATA.reduce((a,b)=>a+(b.atendidos||0),0);
   document.getElementById('totalIpress').textContent = IPRESS_DATA.length;
-  document.getElementById('totalAtenciones').textContent = totalAt.toLocaleString('es-PE');
-  document.getElementById('totalAtendidos').textContent = totalAd.toLocaleString('es-PE');
 
   document.getElementById('ipressList').innerHTML = IPRESS_DATA.map(x=>`
-    <div class="ipress-card">
+    <div class="ipress-card center-only">
+      <i class="fa-solid fa-location-dot"></i>
       <strong>${x.nombre}</strong>
-      <div class="ipress-metrics">
-        <span>${(x.atenciones||0).toLocaleString('es-PE')} atenciones</span>
-        <span>${(x.atendidos||0).toLocaleString('es-PE')} atendidos</span>
-      </div>
+      <small>Centro RIS Ate</small>
     </div>
   `).join('');
 }

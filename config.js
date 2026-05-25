@@ -15,7 +15,7 @@ const POWERBI_URLS = {
   mental: "",
   metaxenicas: "",
   urgencias: "",
-  atenciones: "",
+  atenciones: "https://jimmysistemas2.github.io/atc.github.io/#resumen",
   ipress: "",
   ups: "",
   rrhh: "",

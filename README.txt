@@ -41,3 +41,10 @@ Responsive:
 Nota:
 Los centros RIS Ate están cargados en data.js.
 Puede actualizar atenciones y atendidos allí.
+
+
+ACTUALIZACIÓN SOLICITADA:
+- Se insertó URL en Atendidos y Atenciones:
+  https://jimmysistemas2.github.io/atc.github.io/#resumen
+- Se retiraron los datos de atenciones y atendidos del inicio.
+- Se reemplazó el mapa RIS 1, RIS 2, etc. por un mapa visual RIS Ate.
