@@ -1,121 +1,551 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dashboard Ejecutivo RIS Ate responsive para Power BI y gestión sanitaria.">
-<title>RIS Ate Dashboard Ejecutivo</title>
+  <!--
+    ==========================================================
+    ARCHIVO: index.html
+    ==========================================================
+    Este archivo es la página principal del portal web RIS Ate.
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+    ¿Para qué sirve?
+    - Muestra la pantalla inicial del sistema.
+    - Contiene el menú lateral.
+    - Contiene el encabezado azul.
+    - Contiene el panel de bienvenida.
+    - Contiene las tarjetas de acceso.
+    - Contiene las pestañas donde se cargarán los Power BI.
+
+    IMPORTANTE:
+    - La estructura respeta el modelo visual enviado.
+    - Las URLs de Power BI NO se colocan aquí.
+    - Las URLs se colocan en el archivo config.js.
+  -->
+
+  <meta charset="UTF-8">
+
+  <!--
+    Esta línea permite que la web se adapte a celular, tablet y computadora.
+    Sin esta línea, la página se vería mal en celulares.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RIS Ate | Sistema de Información y Estadística en Salud</title>
+
+  <!--
+    Font Awesome:
+    Librería externa para usar iconos.
+    Ejemplo: hospital, gráfico, usuarios, calendario, etc.
+  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!--
+    style.css:
+    Archivo donde está todo el diseño visual:
+    colores, tamaños, tarjetas, menú, responsive, etc.
+  -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="topbar">
-  <div class="brand">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Minsa_Peru.svg/320px-Minsa_Peru.svg.png">
-    <div>
-      <h1>RIS ATE</h1>
-      <p>Sistema de Información y Estadística en Salud</p>
-    </div>
+  <!--
+    Botón móvil:
+    Solo aparece en celular o tablet.
+    Sirve para abrir el menú lateral cuando la pantalla es pequeña.
+  -->
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!--
+    Capa oscura:
+    Aparece cuando el menú móvil está abierto.
+    Al hacer clic sobre ella, se cierra el menú.
+  -->
+  <div class="overlay" id="overlay"></div>
+
+  <!--
+    app:
+    Contenedor general de toda la página.
+    Tiene dos partes:
+    1. sidebar = menú lateral
+    2. main = contenido principal
+  -->
+  <div class="app">
+
+    <!-- =====================================================
+         SIDEBAR / MENÚ LATERAL
+         =====================================================
+         Esta zona respeta el modelo enviado:
+         - logo MINSA / DIRIS Lima Este
+         - logo RIS Ate
+         - menú por grupos
+    -->
+    <aside class="sidebar" id="sidebar">
+
+      <!-- Zona superior de logos -->
+      <div class="logo-zone">
+
+        <!-- Logo MINSA DIRIS Lima Este -->
+        <div class="minsa-logo-box">
+          <img src="logo_minsa_diris.png" alt="MINSA DIRIS Lima Este">
+        </div>
+
+        <!-- Logo RIS Ate construido con HTML/CSS -->
+        <div class="ris-logo-box">
+          <div class="ris-icon">
+            <i class="fa-solid fa-person-rays"></i>
+          </div>
+
+          <div>
+            <small>RED INTEGRADA<br>DE SALUD</small>
+            <strong>ATE</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Menú lateral -->
+      <nav class="side-menu">
+
+        <!-- Grupo Inicio -->
+        <div class="menu-group">
+          <h4>INICIO</h4>
+
+          <!--
+            data-section="inicio"
+            Significa que al hacer clic se abrirá la sección con id="inicio".
+          -->
+          <button class="menu-item active" data-section="inicio">
+            <i class="fa-solid fa-house"></i>
+            <span>Página de inicio</span>
+          </button>
+        </div>
+
+        <!-- Grupo Indicadores -->
+        <div class="menu-group">
+          <h4>INDICADORES</h4>
+
+          <button class="menu-item" data-section="gestion">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Indicadores de Gestión</span>
+          </button>
+
+          <button class="menu-item" data-section="fed">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Indicadores FED</span>
+          </button>
+
+          <button class="menu-item" data-section="convenio">
+            <i class="fa-solid fa-handshake"></i>
+            <span>Convenio de Gestión</span>
+          </button>
+        </div>
+
+        <!-- Grupo Estrategias Sanitarias -->
+        <div class="menu-group">
+          <h4>ESTRATEGIAS SANITARIAS</h4>
+
+          <button class="menu-item" data-section="curso">
+            <i class="fa-solid fa-children"></i>
+            <span>Curso de Vida</span>
+          </button>
+
+          <button class="menu-item" data-section="inmunizaciones">
+            <i class="fa-solid fa-syringe"></i>
+            <span>Inmunizaciones</span>
+          </button>
+
+          <button class="menu-item" data-section="materno">
+            <i class="fa-solid fa-person-pregnant"></i>
+            <span>Salud Materno</span>
+          </button>
+
+          <button class="menu-item" data-section="bucal">
+            <i class="fa-solid fa-tooth"></i>
+            <span>Salud Bucal</span>
+          </button>
+
+          <button class="menu-item" data-section="mental">
+            <i class="fa-solid fa-brain"></i>
+            <span>Salud Mental</span>
+          </button>
+
+          <button class="menu-item" data-section="metaxenicas">
+            <i class="fa-solid fa-mosquito"></i>
+            <span>Enfermedades Metaxénicas</span>
+          </button>
+
+          <button class="menu-item" data-section="urgencias">
+            <i class="fa-solid fa-truck-medical"></i>
+            <span>Urgencias y Emergencias</span>
+          </button>
+        </div>
+
+        <!-- Grupo Atenciones en Salud -->
+        <div class="menu-group">
+          <h4>ATENCIONES EN SALUD</h4>
+
+          <button class="menu-item" data-section="atenciones">
+            <i class="fa-solid fa-users"></i>
+            <span>Atendidos y Atenciones</span>
+          </button>
+
+          <button class="menu-item" data-section="ipress">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Ranking IPRESS</span>
+          </button>
+
+          <button class="menu-item" data-section="ups">
+            <i class="fa-solid fa-award"></i>
+            <span>Ranking UPS</span>
+          </button>
+        </div>
+
+        <!-- Grupo Gestión -->
+        <div class="menu-group">
+          <h4>GESTIÓN</h4>
+
+          <button class="menu-item" data-section="rrhh">
+            <i class="fa-solid fa-user-doctor"></i>
+            <span>RRHH</span>
+          </button>
+
+          <button class="menu-item" data-section="calidad">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Calidad de Datos</span>
+          </button>
+
+          <button class="menu-item" data-section="reportes">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Reportes</span>
+          </button>
+        </div>
+
+      </nav>
+    </aside>
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+    <main class="main">
+
+      <!-- Header azul superior -->
+      <header class="topbar">
+
+        <div class="topbar-title">
+          <h1>RIS ATE</h1>
+          <p>Sistema de Información y Estadística en Salud</p>
+        </div>
+
+        <div class="date-card">
+          <i class="fa-solid fa-calendar-days"></i>
+          <div>
+            <strong>31 de Mayo, 2026</strong>
+            <span>10:30 AM</span>
+          </div>
+        </div>
+
+      </header>
+
+      <!-- =====================================================
+           SECCIÓN INICIO
+           ===================================================== -->
+      <section id="inicio" class="section active">
+
+        <!-- Panel principal de bienvenida -->
+        <div class="hero-panel">
+
+          <div class="hero-copy">
+            <h2>Bienvenido a RIS ATE</h2>
+
+            <h3>Red Integrada de Salud Ate - DIRIS Lima Este</h3>
+
+            <p>
+              Plataforma oficial para el monitoreo, análisis y evaluación de indicadores de salud,
+              producción de servicios y estrategias sanitarias en la jurisdicción de la RIS Ate.
+            </p>
+
+            <p>
+              Información confiable y oportuna para la toma de decisiones y la mejora continua
+              de los servicios de salud.
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- Tarjetas KPI del inicio -->
+            <div class="quick-kpis">
+
+              <div class="quick-card blue">
+                <i class="fa-solid fa-hospital"></i>
+                <strong>12</strong>
+                <span>IPRESS</span>
+              </div>
+
+              <div class="quick-card green">
+                <i class="fa-solid fa-users"></i>
+                <strong>620,712</strong>
+                <span>Población</span>
+              </div>
+
+              <div class="quick-card amber">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <strong>RIS Ate</strong>
+                <span>Territorio</span>
+              </div>
+
+              <div class="quick-card violet">
+                <i class="fa-solid fa-list-check"></i>
+                <strong>16</strong>
+                <span>Módulos</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Mapa visual RIS Ate -->
+          <div class="map-area">
+            <div class="territory-map">
+
+              <div class="territory-shape shape-a"></div>
+              <div class="territory-shape shape-b"></div>
+              <div class="territory-shape shape-c"></div>
+              <div class="territory-shape shape-d"></div>
+
+              <span class="center-pin pin-1">C.S. Fortaleza</span>
+              <span class="center-pin pin-2">C.S. San Fernando</span>
+              <span class="center-pin pin-3">C.S. Micaela Bastidas</span>
+              <span class="center-pin pin-4">C.S. Alfa y Omega</span>
+              <span class="center-pin pin-5">P.S. Ate</span>
+              <span class="center-pin pin-6">CSMC SAYARIY</span>
+
+            </div>
+
+            <p class="quote">
+              “Datos que transforman información en decisiones que salvan vidas.”
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Tarjetas inferiores como en el modelo -->
+        <div class="feature-grid">
+
+          <article class="feature-card" onclick="goToSection('gestion')">
+            <div class="feature-icon blue-icon">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <h3>INDICADORES</h3>
+            <p>Seguimiento de metas, indicadores de gestión y FED en tiempo real.</p>
+            <button>Ver más →</button>
+          </article>
+
+          <article class="feature-card" onclick="goToSection('atenciones')">
+            <div class="feature-icon green-icon">
+              <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <h3>ATENCIONES</h3>
+            <p>Análisis de atendidos, atenciones y producción de servicios de salud.</p>
+            <button>Ver más →</button>
+          </article>
+
+          <article class="feature-card" onclick="goToSection('ipress')">
+            <div class="feature-icon amber-icon">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3>RANKING IPRESS</h3>
+            <p>Comparativo de desempeño entre establecimientos de salud.</p>
+            <button>Ver más →</button>
+          </article>
+
+          <article class="feature-card" onclick="goToSection('ups')">
+            <div class="feature-icon violet-icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h3>RANKING UPS</h3>
+            <p>Evaluación y ranking de Unidades Productoras de Servicios.</p>
+            <button>Ver más →</button>
+          </article>
+
+          <article class="feature-card" onclick="goToSection('reportes')">
+            <div class="feature-icon cyan-icon">
+              <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+            <h3>REPORTES</h3>
+            <p>Informes, tableros y reportes ejecutivos para la gestión institucional.</p>
+            <button>Ver más →</button>
+          </article>
+
+        </div>
+
+        <!-- Footer institucional -->
+        <footer class="footer-card">
+          <div class="footer-icon">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+
+          <div>
+            <strong>RIS ATE - DIRIS Lima Este</strong>
+            <p>Sistema desarrollado para fortalecer la gestión de la información en salud.</p>
+          </div>
+
+          <span>© 2026 DIRIS Lima Este · Versión 1.0.0</span>
+        </footer>
+      </section>
+
+      <!--
+        ======================================================
+        SECCIONES POWER BI
+        ======================================================
+        Cada sección tiene un iframe.
+
+        ¿Dónde se insertan los URL de Power BI?
+        - Se insertan en config.js
+        - NO se insertan directamente aquí.
+        - El archivo script.js lee config.js y coloca cada URL automáticamente.
+      -->
+
+      <section id="gestion" class="section power-section">
+        <div class="power-header">
+          <h2>Indicadores de Gestión</h2>
+          <p>Inserte la URL en config.js → clave: gestion</p>
+        </div>
+        <iframe id="pbi-gestion"></iframe>
+      </section>
+
+      <section id="fed" class="section power-section">
+        <div class="power-header">
+          <h2>Indicadores FED</h2>
+          <p>Inserte la URL en config.js → clave: fed</p>
+        </div>
+        <iframe id="pbi-fed"></iframe>
+      </section>
+
+      <section id="convenio" class="section power-section">
+        <div class="power-header">
+          <h2>Convenio de Gestión</h2>
+          <p>Inserte la URL en config.js → clave: convenio</p>
+        </div>
+        <iframe id="pbi-convenio"></iframe>
+      </section>
+
+      <section id="curso" class="section power-section">
+        <div class="power-header">
+          <h2>Curso de Vida</h2>
+          <p>Inserte la URL en config.js → clave: curso</p>
+        </div>
+        <iframe id="pbi-curso"></iframe>
+      </section>
+
+      <section id="inmunizaciones" class="section power-section">
+        <div class="power-header">
+          <h2>Inmunizaciones</h2>
+          <p>Inserte la URL en config.js → clave: inmunizaciones</p>
+        </div>
+        <iframe id="pbi-inmunizaciones"></iframe>
+      </section>
+
+      <section id="materno" class="section power-section">
+        <div class="power-header">
+          <h2>Salud Materno</h2>
+          <p>Inserte la URL en config.js → clave: materno</p>
+        </div>
+        <iframe id="pbi-materno"></iframe>
+      </section>
+
+      <section id="bucal" class="section power-section">
+        <div class="power-header">
+          <h2>Salud Bucal</h2>
+          <p>Inserte la URL en config.js → clave: bucal</p>
+        </div>
+        <iframe id="pbi-bucal"></iframe>
+      </section>
+
+      <section id="mental" class="section power-section">
+        <div class="power-header">
+          <h2>Salud Mental</h2>
+          <p>Inserte la URL en config.js → clave: mental</p>
+        </div>
+        <iframe id="pbi-mental"></iframe>
+      </section>
+
+      <section id="metaxenicas" class="section power-section">
+        <div class="power-header">
+          <h2>Enfermedades Metaxénicas</h2>
+          <p>Inserte la URL en config.js → clave: metaxenicas</p>
+        </div>
+        <iframe id="pbi-metaxenicas"></iframe>
+      </section>
+
+      <section id="urgencias" class="section power-section">
+        <div class="power-header">
+          <h2>Urgencias y Emergencias</h2>
+          <p>Inserte la URL en config.js → clave: urgencias</p>
+        </div>
+        <iframe id="pbi-urgencias"></iframe>
+      </section>
+
+      <section id="atenciones" class="section power-section">
+        <div class="power-header">
+          <h2>Atendidos y Atenciones</h2>
+          <p>Inserte la URL en config.js → clave: atenciones</p>
+        </div>
+        <iframe id="pbi-atenciones"></iframe>
+      </section>
+
+      <section id="ipress" class="section power-section">
+        <div class="power-header">
+          <h2>Ranking IPRESS</h2>
+          <p>Inserte la URL en config.js → clave: ipress</p>
+        </div>
+        <iframe id="pbi-ipress"></iframe>
+      </section>
+
+      <section id="ups" class="section power-section">
+        <div class="power-header">
+          <h2>Ranking UPS</h2>
+          <p>Inserte la URL en config.js → clave: ups</p>
+        </div>
+        <iframe id="pbi-ups"></iframe>
+      </section>
+
+      <section id="rrhh" class="section power-section">
+        <div class="power-header">
+          <h2>RRHH</h2>
+          <p>Inserte la URL en config.js → clave: rrhh</p>
+        </div>
+        <iframe id="pbi-rrhh"></iframe>
+      </section>
+
+      <section id="calidad" class="section power-section">
+        <div class="power-header">
+          <h2>Calidad de Datos</h2>
+          <p>Inserte la URL en config.js → clave: calidad</p>
+        </div>
+        <iframe id="pbi-calidad"></iframe>
+      </section>
+
+      <section id="reportes" class="section power-section">
+        <div class="power-header">
+          <h2>Reportes</h2>
+          <p>Inserte la URL en config.js → clave: reportes</p>
+        </div>
+        <iframe id="pbi-reportes"></iframe>
+      </section>
+
+    </main>
   </div>
 
-  <div class="date-card">
-    <i class="fa-solid fa-calendar-days"></i>
-    <div>
-      <strong>Dashboard Ejecutivo</strong>
-      <span>DIRIS Lima Este</span>
-    </div>
-  </div>
-</div>
+  <!--
+    config.js:
+    Aquí se colocan todos los enlaces de Power BI.
+  -->
+  <script src="config.js"></script>
 
-<div class="hero">
-
-  <div class="hero-left">
-
-    <h2>Bienvenido a RIS Ate</h2>
-
-    <h3>Red Integrada de Salud Ate</h3>
-
-    <p>
-      Plataforma ejecutiva para monitoreo territorial, producción,
-      población y estrategias sanitarias de la RIS Ate.
-    </p>
-
-    <div class="kpis">
-
-      <div class="kpi blue">
-        <i class="fa-solid fa-hospital"></i>
-        <strong id="ipress"></strong>
-        <span>IPRESS</span>
-      </div>
-
-      <div class="kpi green">
-        <i class="fa-solid fa-users"></i>
-        <strong id="population"></strong>
-        <span>Población</span>
-      </div>
-
-      <div class="kpi orange">
-        <i class="fa-solid fa-map-location-dot"></i>
-        <strong>RIS Ate</strong>
-        <span>Territorio</span>
-      </div>
-
-      <div class="kpi purple">
-        <i class="fa-solid fa-chart-line"></i>
-        <strong>Power BI</strong>
-        <span>Analytics</span>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="hero-map">
-
-    <div class="map-card">
-
-      <div class="map-title">
-        <h3>Ámbito Territorial RIS Ate</h3>
-      </div>
-
-      <div class="territory">
-
-        <div class="shape s1"></div>
-        <div class="shape s2"></div>
-        <div class="shape s3"></div>
-
-        <span class="pin p1">Fortaleza</span>
-        <span class="pin p2">San Fernando</span>
-        <span class="pin p3">Micaela Bastidas</span>
-        <span class="pin p4">Alfa y Omega</span>
-        <span class="pin p5">P.S. Ate</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-<div class="section-title">
-  <h2>Centros RIS Ate</h2>
-  <p>Establecimientos oficiales validados</p>
-</div>
-
-<div class="ipress-grid" id="ipress-grid"></div>
-
-<div class="powerbi-box">
-  <h2>Atendidos y Atenciones</h2>
-  <iframe src="https://jimmysistemas2.github.io/atc.github.io/#resumen"></iframe>
-</div>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
-
+  <!--
+    script.js:
+    Controla navegación, menú móvil y carga automática de Power BI.
+  -->
+  <script src="script.js"></script>
 </body>
 </html>
