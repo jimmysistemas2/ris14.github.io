@@ -1,17 +1,12 @@
 /*
-==========================================================
 ARCHIVO: config.js
-==========================================================
-AQUÍ SE PEGAN LAS URL DE POWER BI.
 
-¿Cómo usar?
-1. Copia la URL del reporte Power BI.
-2. Pégala entre las comillas "" de la sección correspondiente.
-3. Guarda el archivo.
-4. Abre index.html o vuelve a publicar en GitHub Pages.
+AQUÍ SE PEGAN LAS URL DE POWER BI.
 
 Ejemplo:
 gestion: "https://app.powerbi.com/reportEmbed?reportId=XXXX"
+
+Cada clave corresponde a una pestaña del menú.
 */
 
 const POWERBI_URLS = {
@@ -25,7 +20,10 @@ const POWERBI_URLS = {
   mental: "",
   metaxenicas: "",
   urgencias: "",
+
+  /* URL YA INSERTADA */
   atenciones: "https://jimmysistemas2.github.io/atc.github.io/#resumen",
+
   ipress: "",
   ups: "",
   rrhh: "",

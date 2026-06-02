@@ -1,54 +1,18 @@
-PORTAL RIS ATE - MODELO INSTITUCIONAL EXPLICADO
+DASHBOARD RIS ATE FINAL
 
-Este proyecto respeta el modelo visual enviado.
+Incluye:
+- index.html comentado paso a paso.
+- style.css.
+- script.js.
+- config.js con lugar exacto para pegar URLs Power BI.
+- URL de Atendidos y Atenciones ya insertada.
+- Responsive para celular, tablet y PC.
+- Logo MINSA DIRIS Lima Este.
+- Imagen mapa RIS Ate en la parte superior derecha.
 
-ARCHIVOS:
-1. index.html
-   Estructura principal de la web.
-   Está comentado para principiantes.
+Datos validados:
+- IPRESS: 12
+- Población: 310,356
 
-2. style.css
-   Diseño visual, colores, responsive.
-
-3. script.js
-   Navegación, menú móvil y carga de Power BI.
-
-4. config.js
-   Aquí se pegan las URL de Power BI.
-
-DÓNDE PEGAR POWER BI:
-Abrir config.js y pegar el enlace correspondiente:
-
-gestion: ""
-fed: ""
-convenio: ""
-curso: ""
-inmunizaciones: ""
-materno: ""
-bucal: ""
-mental: ""
-metaxenicas: ""
-urgencias: ""
-atenciones: "https://jimmysistemas2.github.io/atc.github.io/#resumen"
-ipress: ""
-ups: ""
-rrhh: ""
-calidad: ""
-reportes: ""
-
-RESPONSIVE:
-- PC
-- laptop
-- tablet
-- celular
-
-ESTRUCTURA RESPETADA:
-- sidebar blanco
-- header azul
-- logo MINSA/DIRIS
-- RIS ATE superior
-- panel Bienvenido
-- mapa a la derecha
-- tarjetas KPI
-- tarjetas inferiores
-- footer institucional
+URL insertada:
+atenciones: https://jimmysistemas2.github.io/atc.github.io/#resumen
