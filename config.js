@@ -13,7 +13,7 @@ const POWERBI_URLS = {
   gestion: "",
   fed: "",
   convenio: "",
-  curso: "",
+  curso: "https://jimmysistemas2.github.io/cv.github.io/#resumen",
   inmunizaciones: "",
   materno: "",
   bucal: "",
